@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { RouterProvider } from "react-router";
+import "./App.css";
+import DevtoFooter from "./components/DevtoFooter/DevtoFooter";
+import DevtoNavbar from "./components/DevtoNavBar/DevtoNavbar";
+
+import DevtoContext from "./context/DevtoContext";
+import { router } from "./router/router";
+
+const initialDataUser = {
+  avatarUrl: "",
+  name: "",
+  email: "",
+  password: "",
+  posts:[]
+};
+
+const initialDataPosts = [];
 
 function App() {
+  const [dataUser, setDataUser] = useState(initialDataUser);
+  const [dataPosts, setDataPosts] = useState(initialDataPosts);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <DevtoContext.Provider
+        value={[
+          dataPosts,
+          setDataPosts,
+          dataUser,
+          setDataUser,
+          initialDataPosts,
+          initialDataUser,
+        ]}
+      >
+        <DevtoNavbar/>
+        <RouterProvider router={router} />
+        <DevtoFooter/>
+      </DevtoContext.Provider>
     </div>
   );
 }
