@@ -7,6 +7,8 @@ import MenuVertical from "../components/SearchCommponen/MenuSearch/MenuVertical"
 import TitleSearch from "../components/SearchCommponen/TitleSearch/TitleSearch";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
+import DevtoNavbar from "../components/DevtoNavBar/DevtoNavbar";
+import DevtoFooter from "../components/DevtoFooter/DevtoFooter";
 
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,6 +17,7 @@ const Search = () => {
   //console.log("searchParams:..", params);
   return (
     <div >
+      <DevtoNavbar/>
       <Link to={"/"}>HOME</Link>
       <br />
       <TitleSearch query={query} />
@@ -30,6 +33,7 @@ const Search = () => {
           </Grid>
         </Grid>
       </Box>
+      <DevtoFooter/>
     </div>
   );
 };

@@ -6,11 +6,14 @@ import IconButton from '@mui/material/IconButton';
 import "./Notifications.css";
 import * as React from "react";
 import { Link } from "react-router-dom";
+import DevtoNavbar from "../../DevtoNavBar/DevtoNavbar";
+import DevtoFooter from "../../DevtoFooter/DevtoFooter";
 
 const Notifications = () => {
   return (
     <>
     <div className="containerMain">
+      <DevtoNavbar/>
     <Container fixed id="mainBox">
       <Box>
         <h1 className="notificationText">Notifications</h1>
@@ -62,6 +65,7 @@ const Notifications = () => {
         
       </Box>
     </Container>
+     <DevtoFooter/>
     </div>
     </>
   );

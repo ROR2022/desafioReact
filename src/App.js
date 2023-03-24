@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { RouterProvider } from "react-router";
 import "./App.css";
-import DevtoFooter from "./components/DevtoFooter/DevtoFooter";
-import DevtoNavbar from "./components/DevtoNavBar/DevtoNavbar";
 
 import DevtoContext from "./context/DevtoContext";
 import { router } from "./router/router";
@@ -32,11 +30,11 @@ function App() {
           initialDataUser,
         ]}
       >
-        <DevtoNavbar/>
+        
 
         <RouterProvider router={router} />
 
-        <DevtoFooter/>
+        
         
       </DevtoContext.Provider>
     </div>
