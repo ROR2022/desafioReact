@@ -12,6 +12,7 @@ export const enviarRegistro = async (dataUser)=>{
     const response = await fetch(`${publicUrlUsers}`,options);
     const result = await response.json();
     console.log('Result createUser:..',result);
+    return result
     //if (result) window.location.href= homeFront;
   } catch (error) {
     console.log(error);

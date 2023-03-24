@@ -13,8 +13,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
+import { enviarRegistro } from "../../api/crudUsers";
 
-const initialDataLogin = { email: "", password: "", confirm:'' };
+
+const initialDataLogin = { email: "", password: "", confirm:'', name:'', avatarUrl:'' };
 
 const FormRegister = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -32,9 +34,15 @@ const FormRegister = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     console.log("Enviaremos Datos:..", dataLogin);
     setDataLogin(initialDataLogin);
+    try {
+      const result = await enviarRegistro(dataLogin);
+      console.log('Result register:..',result);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div>
@@ -69,8 +77,26 @@ const FormRegister = () => {
             value={dataLogin.email}
             onChange={handleChange}
             name="email"
-            id="outlined-basic"
+            id="outlined-basicEmail"
             label="Email"
+            variant="outlined"
+          />
+          <TextField
+            style={{ marginBottom: "30px", width: "75%" }}
+            value={dataLogin.name}
+            onChange={handleChange}
+            name="name"
+            id="outlined-basicName"
+            label="Name"
+            variant="outlined"
+          />
+          <TextField
+            style={{ marginBottom: "30px", width: "75%" }}
+            value={dataLogin.avatarUrl}
+            onChange={handleChange}
+            name="avatarUrl"
+            id="outlined-basicAvatar"
+            label="Avatar URL"
             variant="outlined"
           />
 
