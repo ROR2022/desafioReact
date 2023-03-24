@@ -16,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const TitleSearch = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box style={{textAlign:'center'}} sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       
         <Grid item sx={{ display: { xs: "none", md: "block" } }} md={8} >

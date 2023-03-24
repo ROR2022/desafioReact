@@ -13,7 +13,7 @@ const menuItemsSearch = [
 ]
 const MenuSearch = () => {
   return (
-    <ButtonGroup sx={{ display: { xs: 'block', md: 'none' } }}  variant="text"  aria-label="text button group">
+    <ButtonGroup style={{marginTop:'20px', textAlign:'center'}} sx={{ display: { xs: 'block', md: 'none' } }}  variant="text"  aria-label="text button group">
       {menuItemsSearch.map(item=>{
         return(
           <Button key={uuidv4()} style={{color:'#aaa'}}>{item}</Button>
