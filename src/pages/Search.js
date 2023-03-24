@@ -11,13 +11,13 @@ import Grid from "@mui/material/Unstable_Grid2";
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const params = Object.fromEntries([...searchParams]);
-
-  console.log("searchParams:..", params);
+  const query= params.q;
+  //console.log("searchParams:..", params);
   return (
     <div style={{backgroundColor:'#dddddd60', padding:'10px'}}>
       <Link to={"/"}>HOME</Link>
       <br />
-      <TitleSearch />
+      <TitleSearch query={query} />
       <MenuSearch />
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>

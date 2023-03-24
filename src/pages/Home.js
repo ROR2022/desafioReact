@@ -50,7 +50,7 @@ const retriveData = async ()=>{
       <Box sx={{ flexGrow: 1 }}>
         <Link to={'/create'}>CREATE</Link>
         <br />
-        <Link to={'/search?q=react'}>SEARCH</Link>
+        <Link to={'/search?q=prueba'}>SEARCH</Link>
         <br />
       <Grid container spacing={2}>
         <Grid item sx={{ display: { xs: 'none', sm: 'block' } }}  sm={4} md={3}>
