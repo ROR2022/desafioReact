@@ -52,7 +52,7 @@ const retriveData = async ()=>{
     <div>
       <DevtoNavbar/>
       <Box sx={{ flexGrow: 1 }}>
-        <Link to={'/create'}>CREATE</Link>
+        <Link to={'/create'}>CREATEEEE</Link>
         <br />
         <Link to={'/search?q=prueba'}>SEARCH</Link>
         <br />
@@ -64,6 +64,7 @@ const retriveData = async ()=>{
         </Grid>
         <Grid item xs={12} sm={8} md={6}>
           <Item><MainContent/></Item>
+          <Link to={'/article'}>ARTICLE</Link>
         </Grid>
         <Grid  item sx={{ display: { xs: 'none', md: 'block' } }} md={3}>
         
