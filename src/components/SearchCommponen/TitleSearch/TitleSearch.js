@@ -14,9 +14,9 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const TitleSearch = () => {
+const TitleSearch = ({query}) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box style={{textAlign:'center'}} sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       
         <Grid item sx={{ display: { xs: "none", md: "block" } }} md={8} >
@@ -26,7 +26,7 @@ const TitleSearch = () => {
           variant="h4"
           component="div"
         >
-          Search results for react
+          Search results for {query}
         </Typography>
          
         </Grid>

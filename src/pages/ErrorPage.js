@@ -1,8 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ErrorPage = () => {
   return (
-    <div>ErrorPage</div>
+    <div>
+      <Link to={'/'}>HOME</Link>
+      <br />
+      ErrorPage
+      </div>
   )
 }
 

@@ -9,6 +9,9 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { getLastPost } from '../api/crudPosts';
 import useDevto from '../hooks/useDevto';
 import { Link } from 'react-router-dom';
+import DevtoFooter from "../components/DevtoFooter/DevtoFooter";
+import DevtoNavbar from "../components/DevtoNavBar/DevtoNavbar";
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -31,7 +34,7 @@ useEffect(() => {
 
 //console.log(dataPosts);
 const retriveData = async ()=>{
-  
+  if(dataPosts?.length>0) return
   try {
     const result = await getLastPost();
     console.log('resultPosts:..',result.lastPost);
@@ -47,10 +50,13 @@ const retriveData = async ()=>{
 
   return (
     <div>
+      <DevtoNavbar/>
       <Box sx={{ flexGrow: 1 }}>
         <Link to={'/create'}>CREATEEEE</Link>
         <br />
-        <Link to={'/search?q=react'}>SEARCH</Link>
+        <Link to={'/search?q=prueba'}>SEARCH</Link>
+        <br />
+        <Link to={'/notifications'}>NOTIFICATIONS</Link>
         <br />
       <Grid container spacing={2}>
         <Grid item sx={{ display: { xs: 'none', sm: 'block' } }}  sm={4} md={3}>
@@ -67,7 +73,7 @@ const retriveData = async ()=>{
         </Grid>
       </Grid>
     </Box>
-      
+    <DevtoFooter/>
       
       
     </div>
