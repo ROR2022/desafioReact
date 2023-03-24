@@ -3,7 +3,7 @@ import React from 'react'
 import MainAsideArticle from './MainAsideArticle/MainAsideArticle'
 import MainContentArticle from './MainContentArticle/MainContentArticle'
 import MongoAsideArticle from './MongoAsideArticle/MongoAsideArticle'
-import './ArticleContent.css'
+//import './ArticleContent.scss'
 
 const Article = () => {
   return (
