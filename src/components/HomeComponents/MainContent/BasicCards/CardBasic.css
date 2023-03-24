@@ -1,0 +1,11 @@
+.hoverBtnEffect:hover{
+  cursor: pointer;
+  background-color: #ddd;
+  border-radius: 10%;
+  
+}
+
+.hoverMainTitleEffect:hover{
+  cursor: pointer;
+  color: blue;
+}
