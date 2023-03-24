@@ -34,7 +34,7 @@ const retriveData = async ()=>{
   
   try {
     const result = await getLastPost();
-    //console.log('resultPosts:..',result.lastPost);
+    console.log('resultPosts:..',result.lastPost);
     if (result?.lastPost){
       setDataPosts([...result.lastPost])
       console.log('actualizado el contexto:..')
@@ -70,13 +70,13 @@ const retriveData = async ()=>{
     </Button></Link>
         <br />
       <Grid container spacing={2}>
-        <Grid item sx={{ display: { xs: 'none', sm: 'block' } }}  sm={6} md={4}>
+        <Grid item sx={{ display: { xs: 'none', sm: 'block' } }}  sm={4} md={3}>
           <Item><MainAside/></Item>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={8} md={6}>
           <Item><MainContent/></Item>
         </Grid>
-        <Grid  item sx={{ display: { xs: 'none', md: 'block' } }} md={4}>
+        <Grid  item sx={{ display: { xs: 'none', md: 'block' } }} md={3}>
         
           <Item><MongoAside/></Item>
     
