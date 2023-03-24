@@ -1,13 +1,24 @@
-
+.containerMain{
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+}
 
 #mainBox{
     display: grid;
+    gap: 5%;
     grid-template-columns: 1fr 2fr;
     justify-content: space-between;
     align-items: center;
     width: 70%;
-    margin-left: 10%;
+    font-family: sans-serif;
 
+    .mainText{
+        width: 100%;
+        height: 100%;
+    }
     .SettingsLink{
         text-decoration: none;
         color: #6c757d;
@@ -16,5 +27,53 @@
         display: flex;
         align-items: center;
         justify-content: end;
+        
+    }
+
+    .boxText{
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .textAside{
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 30px;
+            border-radius: 3px;
+            padding-left: 5%;
+            display: flex;
+            align-items: center;
+            font-size: medium;
+            &:hover{
+                background-color: #6c91f723;
+                color: #3b66dbd0;
+            }
+        }
+        .linkText{
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .userInfoText{
+        margin: 0;
+    }
+    .notifyTitle{
+        border-bottom: #8c9196 1px solid;;
+    }
+    .cardBtn{
+        color: #6c757d ;
+        &:hover{
+            background-color: #6c757d27;
+            color: rgba(0, 0, 0, 0.753);
+        }
+    }
+    .notifyIcons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
