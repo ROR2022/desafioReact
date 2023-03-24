@@ -63,18 +63,8 @@ const DevtoNavbar = () => {
         <Toolbar sx={{ background: "white" }}>
 
           <Aside/>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              flexGrow: 1,
-              
-              background: "black",
-            }}
-          >
-            Dev
-          </Typography>
+          <Logo/>
+         
           <Search sx={{ flexGrow: 1, display:{xs:"none",md:"block"},border: "1px solid black" }}>
             <SearchIconWrapper sx={{ color: "black" }}>
               <SearchIcon />

@@ -1,12 +1,18 @@
+import Typography from "@mui/material/Typography";
 const Logo = () => {
   return (
-    <a href="#">
-      <img
-      style={{width:"50px"}}
-        src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
-        alt="imagen de logo "
-      />
-    </a>
+    <Typography
+    variant="h6"
+    noWrap
+    component="div"
+    sx={{
+      flexGrow: 1,
+      
+      background: "black",
+    }}
+  >
+    Dev
+  </Typography>
   );
 };
 
