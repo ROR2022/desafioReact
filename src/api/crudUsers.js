@@ -41,7 +41,7 @@ export const getDataUser = async (id)=>{
   try {
     const response = await fetch(`${publicUrlUsers}/${id}`);
     const result = await response.json();
-    console.log('Result getDataUser:..',result);
+    //console.log('Result getDataUser:..',result);
     return result
   } catch (error) {
     console.log(error);
