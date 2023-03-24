@@ -14,6 +14,7 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import Aside from './aside/aside'
 import { border, color } from "@mui/system";
 import { NoEncryption } from "@mui/icons-material";
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -77,7 +78,9 @@ const DevtoNavbar = () => {
           </Search>
           <Box sx={{ flexGrow: 3 }}></Box>
           <Box sx={{ flexGrow: 1 }}>
+            
             <IconButton>
+            
               <Typography
                 variant="h6"
                 noWrap
@@ -95,9 +98,13 @@ const DevtoNavbar = () => {
                   
                 }}
               >
+                
                 Create Post
+                
               </Typography>
+              
             </IconButton>
+            
             <IconButton sx={{ color: "black" ,display:{xs:{display:"block"},md:"none"}}}>
             <SearchIcon />
             </IconButton>
