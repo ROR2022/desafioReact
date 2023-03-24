@@ -12,8 +12,9 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
-
 import { enviarRegistro } from "../../api/crudUsers";
+import useDevto from '../../hooks/useDevto';
+import { useNavigate } from "react-router-dom";
 
 
 const initialDataLogin = { email: "", password: "", confirm:'', name:'', avatarUrl:'' };
@@ -21,6 +22,8 @@ const initialDataLogin = { email: "", password: "", confirm:'', name:'', avatarU
 const FormRegister = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [dataLogin, setDataLogin] = useState(initialDataLogin);
+  const [_,__,___,setDataUser] = useDevto();
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -40,6 +43,14 @@ const FormRegister = () => {
     try {
       const result = await enviarRegistro(dataLogin);
       console.log('Result register:..',result);
+      if(result?._id){
+        setDataUser({...result});
+        navigate('/');
+      }else{
+        console.log('Error en el Registro:..');
+        //setErrorLogin(true);
+      }
+
     } catch (error) {
       console.log(error);
     }
