@@ -3,6 +3,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import { createBrowserRouter } from "react-router-dom";
 import Search from "../pages/Search";
+import Notifications from "../components/NotifyComponent/notify/Notifications";
 
 
 
@@ -20,4 +21,8 @@ export const router = createBrowserRouter([
     path: "search/",
     element: <Search />,
   },
+  {
+    path: "/notifications",
+    element: <Notifications />
+  },  
 ]);
