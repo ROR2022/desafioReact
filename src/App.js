@@ -33,8 +33,11 @@ function App() {
         ]}
       >
         <DevtoNavbar/>
+
         <RouterProvider router={router} />
+
         <DevtoFooter/>
+        
       </DevtoContext.Provider>
     </div>
   );
