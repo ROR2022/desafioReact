@@ -21,7 +21,7 @@ function App() {
   const [dataUser, setDataUser] = useState(initialDataUser);
   const [dataPosts, setDataPosts] = useState(initialDataPosts);
   return (
-    <div>
+    <div style={{backgroundColor:'#dddddd70'}}>
       <DevtoContext.Provider
         value={[
           dataPosts,

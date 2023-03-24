@@ -14,7 +14,7 @@ const Search = () => {
   const query= params.q;
   //console.log("searchParams:..", params);
   return (
-    <div style={{backgroundColor:'#dddddd60', padding:'10px'}}>
+    <div >
       <Link to={"/"}>HOME</Link>
       <br />
       <TitleSearch query={query} />
