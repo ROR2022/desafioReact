@@ -19,7 +19,12 @@ function App() {
   const [dataUser, setDataUser] = useState(initialDataUser);
   const [dataPosts, setDataPosts] = useState(initialDataPosts);
   return (
+<<<<<<< HEAD
     <div style={{backgroundColor:'#dddddd70'}}>
+=======
+
+    <div>
+>>>>>>> footer
       <DevtoContext.Provider
         value={[
           dataPosts,
@@ -30,14 +35,21 @@ function App() {
           initialDataUser,
         ]}
       >
+<<<<<<< HEAD
         
 
         <RouterProvider router={router} />
 
         
         
+=======
+        <DevtoNavbar/>
+        <RouterProvider router={router} />
+>>>>>>> footer
       </DevtoContext.Provider>
+      <DevtoFooter />
     </div>
+
   );
 }
 
