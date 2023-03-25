@@ -21,6 +21,7 @@ function App() {
   const [dataUser, setDataUser] = useState(initialDataUser);
   const [dataPosts, setDataPosts] = useState(initialDataPosts);
   return (
+
     <div>
       <DevtoContext.Provider
         value={[
@@ -33,13 +34,11 @@ function App() {
         ]}
       >
         <DevtoNavbar/>
-
         <RouterProvider router={router} />
-
-        <DevtoFooter/>
-        
       </DevtoContext.Provider>
+      <DevtoFooter />
     </div>
+
   );
 }
 
