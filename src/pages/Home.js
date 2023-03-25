@@ -9,10 +9,14 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { getLastPost } from '../api/crudPosts';
 import useDevto from '../hooks/useDevto';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import DevtoFooter from "../components/DevtoFooter/DevtoFooter";
 import DevtoNavbar from "../components/DevtoNavBar/DevtoNavbar";
 
 
+=======
+import Button from '@mui/material/Button';
+>>>>>>> create
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -52,7 +56,30 @@ const retriveData = async ()=>{
     <div>
       <DevtoNavbar/>
       <Box sx={{ flexGrow: 1 }}>
+<<<<<<< HEAD
         <Link to={'/create'}>CREATEEEE</Link>
+=======
+        <Link to={'/create'}><Button
+      variant="contained"
+      sx={{
+        backgroundColor: '#ffffff',
+        color: '#2f3ab2',
+        borderColor: '#2f3ab2',
+        border: 'solid',
+        textDecoration: 'none',
+        font: 'inherit',
+        fontWeight: '500px',
+        '&:hover': {
+          backgroundColor: '#2f3ab2',
+          borderColor: '#2f3ab2',
+          color: '#ffffff'
+        },
+
+      }}
+    >
+      Create Post
+    </Button></Link>
+>>>>>>> create
         <br />
         <Link to={'/search?q=prueba'}>SEARCH</Link>
         <br />
@@ -80,4 +107,11 @@ const retriveData = async ()=>{
   )
 }
 
-export default Home
+
+
+
+
+  
+  
+
+export default Home;
