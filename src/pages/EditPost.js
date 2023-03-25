@@ -1,85 +1,97 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "./CreateStyle.css";
-import image from "./post-image.png";
 import DevtoNavbar from "../components/DevtoNavBar/DevtoNavbar";
 import DevtoFooter from "../components/DevtoFooter/DevtoFooter";
 import { useNavigate } from "react-router-dom";
-import { publicUrl } from "../assets/constants/constants";
-import { publishDataPost } from "../api/crudPosts";
-import useDevto from '../hooks/useDevto';
+import useDevto from "../hooks/useDevto";
+import { useParams } from "react-router-dom";
+import { getDataPost, editDataPost } from "../api/crudPosts";
+import { getDataUser } from "../api/crudUsers";
 
-const CreatePost = () => {
+
+const EditPost = () => {
   const [title, setTitle] = useState("");
-  const [urlImage,setUrlImage] = useState("");
+  const [urlImage, setUrlImage] = useState("");
   const [content, setContent] = useState("");
   const [showTitleHelp, setShowTitleHelp] = useState(false);
   const [showContentHelp, setShowContentHelp] = useState(false);
-  const [showImageInput, setShowImageInput] = useState(false);
-  const [imageFile, setImageFile] = useState(null);
+  const [dataCard, setDataCard] = useState({});
+  const [dataUserPost, setDataUserPost] = useState({});
+  const params = useParams();
+
   const navigate = useNavigate();
-  const [_,__,dataUser]=useDevto();
+  const [_, __, dataUser] = useDevto();
+
+  useEffect(() => {
+    if(params?.id){
+      retriveDataCard(params.id);
+    }
+  }, [])
+  useEffect(() => {
+    if (dataCard?._id) {
+      retriveDataUser();
+    }
+    if(dataCard.titlePost) setTitle(`${dataCard.titlePost}`)
+    if(dataCard.urlImage) setUrlImage(`${dataCard.urlImage}`)
+    if(dataCard.textPost) setContent(`${dataCard.textPost}`)
+  }, [dataCard]);
+  
+  const retriveDataCard = async (id) => {
+    try {
+      const result = await getDataPost(id);
+      console.log("DataPost from DB:..", result);
+      if (result?.dataPost) {
+        setDataCard({ ...result.dataPost });
+      }
+    } catch (error) {
+      console.log("Error retriving data card:..");
+    }
+  };
+
+  const retriveDataUser = async () => {
+    try {
+      const result = await getDataUser(dataCard.user);
+      console.log("Result getDataUser:..", result);
+      if (result._id) {
+        setDataUserPost({ ...result });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const dataPost= {
+    const dataPost = {
+      ...dataCard,
       urlImage: urlImage,
       titlePost: title,
       textPost: content,
-      user: dataUser?._id?dataUser._id:""
-    }
+    };
 
     try {
-      const result = await publishDataPost(dataPost);
-      console.log('Result PublishDataPost:..',result);
+      const result = await editDataPost(dataPost);
+      console.log("Result EditDataPost:..", result);
     } catch (error) {
       console.log(error);
-
     }
-     setContent("");
-     setTitle("");
-     setUrlImage("");
-     navigate('/');
-
-  };
-
-  const handleImageChange = (event) => {
-    setImageFile(event.target.files[0]);
+    setContent("");
+    setTitle("");
+    setUrlImage("");
+    navigate("/");
   };
 
   return (
     <>
       <DevtoNavbar />
-      
+      <h2>Editando Post</h2>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8">
             <div className="card">
               <div className="card-body">
                 <form onSubmit={handleSubmit}>
-
-                  {/* {showImageInput ? (
-                    <div className="form-group">
-                      <label htmlFor="image">Image:</label>
-                      <input
-                        type="file"
-                        id="image"
-                        className="form-control-file"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                      />
-                    </div>
-                  ) : (
-                    <button
-                      type="button"
-                      className="btn btn-link"
-                      onClick={() => setShowImageInput(true)}
-                    >
-                      Add a cover image
-                    </button>
-                  )} */}
-
                   <div className="form-group">
                     <label htmlFor="urlImage">URL Image:</label>
                     <input
@@ -93,7 +105,6 @@ const CreatePost = () => {
                       placeholder="URL Image here..."
                       style={{ fontWeight: "bold" }} // Agregar estilo en línea para negrita
                     />
-                    
                   </div>
                   <div className="form-group">
                     <label htmlFor="title">Title:</label>
@@ -142,7 +153,7 @@ const CreatePost = () => {
 
                   <div className="d-flex justify-content-between align-items-center">
                     <button type="submit" className="btn btn-primary">
-                      Publish
+                      Save
                     </button>
                   </div>
                 </form>
@@ -157,4 +168,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default EditPost;

@@ -14,6 +14,7 @@ import Comments from "../../HomeComponents/MainContent/BasicCards/Comments/Comme
 import { deletePost, getDataPost } from "../../../api/crudPosts";
 import { getDataUser } from "../../../api/crudUsers";
 import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from "react-router-dom";
 
 const MainContent = () => {
@@ -74,6 +75,11 @@ const MainContent = () => {
     }
   }
 
+  const handleEdit=()=>{
+    console.log('Editaremos el Post:');
+    navigate(`/edit/${params.id}`);
+  }
+
   return (
     <Card sx={{ marginTop: "30px" }}>
       <CardMedia
@@ -89,7 +95,8 @@ const MainContent = () => {
           marginTop: "10px",
         }}
       >
-        <Button onClick={handleDelete} variant="outlined" startIcon={<DeleteIcon />}></Button>
+        <Button onClick={handleEdit} variant="outlined" startIcon={<EditIcon />}></Button>
+        <Button onClick={handleDelete} color='error' variant="outlined" startIcon={<DeleteIcon />}></Button>
       </div>
 
       <UserBadge dataUser={dataUser} />
