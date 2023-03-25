@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from "@mui/material/styles";
@@ -47,16 +47,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
+
 const Search=()=>{
    
     return (
      
       <Search sx={{ flexGrow: 1, display:{xs:"none",md:"block"},border: "1px solid black" }}>
       <SearchIconWrapper sx={{ color: "black" }}>
-        <SearchIcon />
+        <SearchIcon  />
       </SearchIconWrapper>
       <StyledInputBase
         sx={{ color: "black" }}
+        
         placeholder="Search…"
         inputProps={{ "aria-label": "search" }}
       />

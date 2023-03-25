@@ -64,13 +64,14 @@ const EditPost = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const dataPost = {
-      ...dataCard,
+      id: dataCard._id,
       urlImage: urlImage,
       titlePost: title,
       textPost: content,
     };
-
+    
     try {
+      console.log('Enviando datos de Edicion:..',dataPost);
       const result = await editDataPost(dataPost);
       console.log("Result EditDataPost:..", result);
     } catch (error) {

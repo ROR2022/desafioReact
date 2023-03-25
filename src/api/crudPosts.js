@@ -27,7 +27,7 @@ export const editDataPost = async(data)=>{
     body: JSON.stringify(data)
   }
   try {
-    const response = await fetch(`${publicUrl}/${data._id}`,options);//'http://localhost:4000/createPost' //createPost
+    const response = await fetch(`${publicUrl}/${data.id}`,options);//'http://localhost:4000/createPost' //createPost
     const result = await response.json();
     console.log('Result editPost:..',result);
     return result

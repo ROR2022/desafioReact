@@ -57,6 +57,9 @@ function MongoAside(props) {
           },
         }}
       />
+      {/* onClick="MM_swapImage('home','','images/home_orig.png','philosophie','','images/philosophie.png','kontakt','','images/kontakt.png','body_layout','','images/body_leistungen.png',0)"
+            onMouseOver="MM_swapImage('leistungen','','images/leistungen_onclick.png',1)"
+            onMouseOut="mouseOut('leistungen')" */}
       <Box sx={{ textAlign: "center", pt: 1 }}>
         <Button onClick={toggleDrawer(true)}>Mongo Aside</Button>
         <a href="#">
@@ -67,9 +70,6 @@ function MongoAside(props) {
             width="162"
             height="38"
             id="leistungen"
-            onClick="MM_swapImage('home','','images/home_orig.png','philosophie','','images/philosophie.png','kontakt','','images/kontakt.png','body_layout','','images/body_leistungen.png',0)"
-            onMouseOver="MM_swapImage('leistungen','','images/leistungen_onclick.png',1)"
-            onMouseOut="mouseOut('leistungen')"
           />
         </a>
         <h1>Learning Git</h1>
