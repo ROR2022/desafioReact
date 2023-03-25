@@ -1,15 +1,19 @@
 import * as React from "react";
-import { Box, Button, Card, Container, Typography } from "@mui/material";
+import { Box, Button, Card, Container, CardContent } from "@mui/material";
 import useDevto from "../../../hooks/useDevto";
 import Checkbox from "@mui/material/Checkbox";
+import DevtoNavbar from "../../DevtoNavBar/DevtoNavbar";
+import DevtoFooter from "../../DevtoFooter/DevtoFooter";
 import "./Settings.css";
 import { Link } from "react-router-dom";
 
 const Settings = () => {
-  const [dataUser] = useDevto();
+  const [dataPosts,setDataPosts,dataUser] = useDevto();
+  console.log("datauser:",dataUser)
   return (
     <>
       <div className="containerMain">
+      <DevtoNavbar/>
         <Container fixed>
           <Box>
             <h1>
@@ -34,7 +38,7 @@ const Settings = () => {
             <Box>
               <Card className="cardContainer">
                 <h2>Email Notifications</h2>
-                <Typography>
+                <CardContent>
                   <p>
                     <Checkbox />
                     Send me weekly newsletter emails
@@ -63,7 +67,7 @@ const Settings = () => {
                     <Checkbox defaultChecked />
                     Send me occasional reminders that I have unread notifications on DEV Community
                   </p>
-                </Typography>
+                </CardContent>
               </Card>
               <Card className="cardContainer">
                 <h2>Mobile Notifications</h2>
@@ -96,6 +100,7 @@ const Settings = () => {
             </Box>
           </Box>
         </Container>
+        <DevtoFooter/>
       </div>
     </>
   );
