@@ -60,7 +60,7 @@ const retriveData = async ()=>{
         </Grid>
         <Grid item xs={12} sm={8} md={6}>
           <Item><MainContent/></Item>
-          <Link to={'/article'}>ARTICLE</Link>
+          
         </Grid>
         <Grid  item sx={{ display: { xs: 'none', md: 'block' } }} md={3}>
         
