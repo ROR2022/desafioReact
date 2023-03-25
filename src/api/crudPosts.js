@@ -59,6 +59,7 @@ export const deletePost = async(id)=>{
     const response = await fetch(`${publicUrl}/${id}`,options);//'http://localhost:4000/createPost' //createPost
     const result = await response.json();
     console.log('Result deletePost:..',result);
+    return result
     //if (result) window.location.href= homeFront; //'http://127.0.0.1:5500/projectJS/index.html'
   } catch (error) {
     console.log(error)

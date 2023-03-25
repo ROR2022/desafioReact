@@ -13,6 +13,7 @@ import DevtoFooter from "../components/DevtoFooter/DevtoFooter";
 import DevtoNavbar from "../components/DevtoNavBar/DevtoNavbar";
 
 
+import Button from '@mui/material/Button';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -34,7 +35,7 @@ useEffect(() => {
 
 //console.log(dataPosts);
 const retriveData = async ()=>{
-  if(dataPosts?.length>0) return
+  
   try {
     const result = await getLastPost();
     console.log('resultPosts:..',result.lastPost);
@@ -52,19 +53,14 @@ const retriveData = async ()=>{
     <div>
       <DevtoNavbar/>
       <Box sx={{ flexGrow: 1 }}>
-        <Link to={'/create'}>CREATEEEE</Link>
-        <br />
-        <Link to={'/search?q=prueba'}>SEARCH</Link>
-        <br />
-        <Link to={'/notifications'}>NOTIFICATIONS</Link>
-        <br />
+        
       <Grid container spacing={2}>
         <Grid item sx={{ display: { xs: 'none', sm: 'block' } }}  sm={4} md={3}>
           <Item><MainAside/></Item>
         </Grid>
         <Grid item xs={12} sm={8} md={6}>
           <Item><MainContent/></Item>
-          <Link to={'/article'}>ARTICLE</Link>
+          
         </Grid>
         <Grid  item sx={{ display: { xs: 'none', md: 'block' } }} md={3}>
         
@@ -80,4 +76,11 @@ const retriveData = async ()=>{
   )
 }
 
-export default Home
+
+
+
+
+  
+  
+
+export default Home;
