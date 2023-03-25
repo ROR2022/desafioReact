@@ -2,8 +2,14 @@ import React from 'react'
 import useDevto from '../hooks/useDevto';
 import { Link } from 'react-router-dom';
 import ArticleContent from '../components/ArticleContent/ArticleContent';
+<<<<<<< HEAD
 import DevtoNavbar from "../components/DevtoNavBar/DevtoNavbar";
 import DevtoFooter from "../components/DevtoFooter/DevtoFooter";
+=======
+import DevtoNavbar from '../components/DevtoNavBar/DevtoNavbar';
+import DevtoFooter from '../components/DevtoFooter/DevtoFooter';
+
+>>>>>>> search
 
 const ArticlePage = () => {
     const [dataPosts]=useDevto();

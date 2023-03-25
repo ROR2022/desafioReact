@@ -64,3 +64,13 @@ export const deletePost = async(id)=>{
     console.log(error)
   }
 }
+
+export const getDataPost = async(id)=>{
+  try {
+    const response = await fetch(`${publicUrl}/${id}`);
+    const result = response.json();
+    return result
+  } catch (error) {
+    console.log(error);
+  }
+}

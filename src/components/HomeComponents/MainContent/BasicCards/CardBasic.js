@@ -14,6 +14,7 @@ import "./CardBasic.css";
 import { lastCardImageTemp } from "../../../../assets/constants/links";
 import Comments from "./Comments/Comments";
 import UserBadge from "./UserBadge";
+import { Link } from "react-router-dom";
 
 const bull = (
   <Box
@@ -69,7 +70,9 @@ const CardBasic = ({ dataCard, index }) => {
           variant="h5"
           component="div"
         >
+          <Link style={{color:'inherit', textDecoration:'none'}} to={dataCard?._id?`/article/${dataCard?._id}`:'#'}>
           {!dataCard ? "MainTitle" : dataCard.titlePost}
+          </Link>
         </Typography>
 
         <Typography variant="body2" color="text.secondary">

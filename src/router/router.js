@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
     element: <CreatePost />,
   },
   {
-    path: "article/",
+    path: "article/:id",
     element: <ArticlePage />
   },
   {
