@@ -1,0 +1,83 @@
+#mainBox {
+  display: grid;
+  gap: 2%;
+  grid-template-columns: 2fr 6fr;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: sans-serif;
+  margin: 0;
+}
+#mainBox .settingList {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+#mainBox .settingList .settingsUl {
+  list-style-type: none;
+  width: 100%;
+  height: 30%;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#mainBox .settingList .settingsUl .settingsLink {
+  text-decoration: none;
+  color: black;
+  margin-bottom: 5px;
+  width: 100%;
+}
+#mainBox .settingList .settingsUl .settingsLi {
+  width: 100%;
+  border-radius: 3px;
+  font-size: medium;
+  height: 30px;
+  padding-left: 2%;
+  display: flex;
+  align-items: center;
+}
+#mainBox .settingList .settingsUl .settingsLi:hover {
+  background-color: rgba(108, 145, 247, 0.137254902);
+  color: rgba(59, 102, 219, 0.8156862745);
+}
+#mainBox .settingList .settingsUl .settingsLiNotify {
+  width: 100%;
+  border-radius: 3px;
+  font-size: medium;
+  height: 30px;
+  padding-left: 2%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+#mainBox .settingList .settingsUl .settingsLiNotify:hover {
+  background-color: rgba(108, 145, 247, 0.137254902);
+  color: rgba(59, 102, 219, 0.8156862745);
+}
+
+.cardContainer {
+  padding-left: 5%;
+  margin-bottom: 5%;
+}
+
+.cardContainerBtn {
+  margin-bottom: 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#notifyBtn {
+  width: 90%;
+  margin: 5px;
+  background-color: #3b49df;
+}
+#notifyBtn:hover {
+  background-color: #2f3ab2;
+}/*# sourceMappingURL=Settings.css.map */

@@ -7,6 +7,7 @@ import Search from "../pages/Search";
 import Notifications from "../components/NotifyComponent/notify/Notifications";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Settings from "../components/NotifyComponent/settings/Settings";
 
 
 
@@ -39,5 +40,17 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />
+  },
+  {
+    path: "/settings/notifications",
+    element: <Settings />
+  },
+  {
+    path:"/notifications/comments",
+    element: <Notifications />
   },  
+  {
+    path:"/notifications/posts",
+    element: <Notifications />
+  }, 
 ]);
