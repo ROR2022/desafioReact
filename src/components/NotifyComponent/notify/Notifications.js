@@ -8,8 +8,11 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import DevtoNavbar from "../../DevtoNavBar/DevtoNavbar";
 import DevtoFooter from "../../DevtoFooter/DevtoFooter";
+import useDevto from '../../../hooks/useDevto'
 
 const Notifications = () => {
+  const [dataPosts,setDataPosts,dataUser]=useDevto();
+
   return (
     <>
     <div className="containerMain">
@@ -40,15 +43,15 @@ const Notifications = () => {
         <CardHeader
           avatar={
             
-            <Avatar aria-label="recipe">
+            <Avatar aria-label="recipe" src={dataUser?.avatarUrl?dataUser.avatarUrl:'#'}/>
                 
-            </Avatar>
+          
           }
           action={
             <IconButton aria-label="settings">
             </IconButton>
           }
-          title="User Name made a new"
+          title={dataUser?.name?dataUser.name:"User Name made a new"}
           subheader="September 14, 2016"
         />
         <Card>

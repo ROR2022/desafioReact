@@ -56,7 +56,7 @@ const CardBasic = ({ dataCard, index }) => {
         <CardMedia
           style={{ width: "100%" }}
           sx={{ height: "30vh" }}
-          image={!dataCard ? lastCardImageTemp : dataCard.urlImage}
+          image={!dataCard.urlImage ? lastCardImageTemp : dataCard.urlImage}
           title="lastCardImage"
         />
       )}
