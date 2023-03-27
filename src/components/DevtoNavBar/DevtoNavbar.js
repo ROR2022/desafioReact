@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "./logo/logo";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import useDevto from "../../hooks/useDevto";
 import Button from "@mui/material/Button";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -63,6 +64,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const DevtoNavbar = () => {
   const [_, __, dataUser, setDataUser, ___, initialDataUser] = useDevto();
+  const [myQuery, setMyQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmitQuery = () => {
+    console.log("myQuery:...", myQuery);
+    navigate(`/search?q=${myQuery}`);
+  };
+
+  const handleChangeSearch = (e) => {
+    console.log("Query:...", e.target.value);
+    setMyQuery(e.target.value);
+  };
 
   useEffect(() => {
     if (dataUser?.name) {
@@ -87,11 +100,19 @@ const DevtoNavbar = () => {
               border: "1px solid black",
             }}
           >
-            <SearchIconWrapper sx={{ color: "black" }}>
-              <SearchIcon />
-            </SearchIconWrapper>
+            <Button
+              onClick={handleSubmitQuery}
+              variant="text"
+              style={{ marginRight: "0px", height: "20px" }}
+            >
+              <SearchIconWrapper sx={{ color: "black" }}>
+                <SearchIcon />
+              </SearchIconWrapper>
+            </Button>
             <StyledInputBase
               sx={{ color: "black" }}
+              onChange={handleChangeSearch}
+              value={myQuery}
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
             />

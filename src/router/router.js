@@ -7,6 +7,7 @@ import Search from "../pages/Search";
 import Notifications from "../components/NotifyComponent/notify/Notifications";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import EditPost from "../pages/EditPost";
 
 
 
@@ -39,5 +40,9 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />
+  },  
+  {
+    path: "/edit/:id",
+    element: <EditPost />
   },  
 ]);

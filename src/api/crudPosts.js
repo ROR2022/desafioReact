@@ -30,7 +30,8 @@ export const editDataPost = async(data)=>{
     const response = await fetch(`${publicUrl}/${data.id}`,options);//'http://localhost:4000/createPost' //createPost
     const result = await response.json();
     console.log('Result editPost:..',result);
-    //if (result) window.location.href= homeFront; //'http://127.0.0.1:5500/projectJS/index.html'
+    return result
+    
   } catch (error) {
     console.log(error)
   }

@@ -18,8 +18,7 @@ const Search = () => {
   return (
     <div >
       <DevtoNavbar/>
-      <Link to={"/"}>HOME</Link>
-      <br />
+      
       <TitleSearch query={query} />
       <MenuSearch />
       <Box sx={{ flexGrow: 1 }}>
