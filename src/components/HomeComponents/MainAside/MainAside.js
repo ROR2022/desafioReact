@@ -25,14 +25,7 @@ import SportsIcon from "@mui/icons-material/Sports";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 const MainAside = () => {
-  const styles = {
-    tr: {
-      background: "#f1f1f1",
-      '&:hover': {
-        background: "#f00",
-      }
-    }
-  };
+
   const firstIcons = [
     <HomeIcon />,
     <InventoryIcon />,
@@ -71,7 +64,7 @@ const MainAside = () => {
         "Software comparisons",
       ].map((text, index) => (
         <ListItem key={text} disablePadding>
-          <ListItemButton className={styles.tr} >
+          <ListItemButton>
             <ListItemIcon>{firstIcons[index]}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItemButton>
