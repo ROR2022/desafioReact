@@ -7,6 +7,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import TextsmsIcon from '@mui/icons-material/Textsms';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import CardMedia from "@mui/material/CardMedia";
+import { lastCardImageTemp } from '../../../assets/constants/links';
 
 const style = {
   width: '100%',
@@ -19,6 +21,12 @@ const style = {
 const MongoAside = () => {
   return (
     <><List sx={style} component="nav" aria-label="mailbox folders">
+       <CardMedia
+          style={{ width: "100%" }}
+          sx={{ height: "30vh" }}
+          image={lastCardImageTemp}
+          title="lastCardImage"
+        />
       <ListItem button>
       <h1>Listing</h1>
       
