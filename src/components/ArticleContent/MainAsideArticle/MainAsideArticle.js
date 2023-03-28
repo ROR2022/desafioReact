@@ -12,14 +12,24 @@ const style = {
   width: '100%',
   maxWidth: 360,
   bgcolor: 'background.paper',
+  alignItems: 'center'
 };
 
 
 
 const MainAsideArticle = () => {
   return (
+    /*
+    <>
     <List sx={style} component="nav" aria-label="mailbox folders">
-      <ListItem button>
+      <ListItem>
+        <FavoriteIcon />
+      </ListItem>
+    </List>
+    </>
+    */
+    <List sx={style} component="nav" aria-label="mailbox folders">
+      <ListItem button alignItems="center">
         <FavoriteIcon />
       </ListItem>
     <Divider />
