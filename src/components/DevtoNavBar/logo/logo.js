@@ -1,21 +1,20 @@
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import CardMedia from "@mui/material/CardMedia";
+import { logoDevtoBlack } from "../../../assets/constants/links";
+
 const Logo = () => {
   return (
-    <Typography
-    variant="h6"
-    noWrap
-    component="div"
-    sx={{
-      flexGrow: 1,
-      
-      background: "black",
-    }}
-  >
+   
     <Link  style={{color:'inherit', textDecoration:'none'}} to={'/'}>
-    Dev
+    <CardMedia
+          style={{ width: "50px" }}
+          sx={{ height: "50px" }}
+          image={logoDevtoBlack}
+          title="lastCardImage"
+        />
     </Link>
-  </Typography>
+  
   );
 };
 

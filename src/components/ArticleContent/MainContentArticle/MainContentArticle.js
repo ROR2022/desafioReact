@@ -16,10 +16,13 @@ import { getDataUser } from "../../../api/crudUsers";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from "react-router-dom";
+import useDevto from '../../../hooks/useDevto';
 
 const MainContent = () => {
   const [dataCard, setDataCard] = useState({});
-  const [dataUser, setDataUser] = useState({});
+  const [dataUserArticle, setdataUserArticle] = useState({});
+  const [_,__,dataUser]= useDevto();
+
   const navigate = useNavigate();
   const params = useParams();
 
@@ -53,7 +56,7 @@ const MainContent = () => {
       const result = await getDataUser(dataCard.user);
       console.log("Result getDataUser:..", result);
       if (result._id) {
-        setDataUser({ ...result });
+        setdataUserArticle({ ...result });
       }
     } catch (error) {
       console.log(error);
@@ -90,7 +93,7 @@ const MainContent = () => {
       />
       <div
         style={{
-          display: "flex",
+          display: dataUser?.name?"flex":"none",
           justifyContent: "flex-end",
           marginTop: "10px",
         }}
@@ -99,7 +102,7 @@ const MainContent = () => {
         <Button onClick={handleDelete} color='error' variant="outlined" startIcon={<DeleteIcon />}></Button>
       </div>
 
-      <UserBadge dataUser={dataUser} />
+      <UserBadge dataUser={dataUserArticle} />
 
       <CardContent style={{ textAlign: "left", marginLeft: "50px" }}>
         <Typography

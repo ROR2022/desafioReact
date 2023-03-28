@@ -119,7 +119,7 @@ const DevtoNavbar = () => {
           </Search>
           <Box sx={{ flexGrow: 3 }}></Box>
           <Box sx={{ flexGrow: 1 }}>
-            <IconButton>
+            <IconButton style={{display:dataUser?.name?'inline-block':'none'}}>
               <Typography
                 variant="h6"
                 noWrap
